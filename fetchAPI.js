@@ -8,9 +8,9 @@ fetch(API_HACKING)
 
   var firstNewsTitle = document.querySelector(".font-weight-light");
   var firstNewsDesc = document.querySelector(".firstDesc");
-  var firstNewsImg = document.querySelector(".img-fluid rounded mb-4 mb-lg-0");
+  var firstNewsImg = document.querySelector(".img-fluid");
   var firstNewsURL = document.querySelector(".btn-primary");
-  console.log(firstNewsURL);
+  console.log(firstNewsImg);
   
 
   var containerNewsTitle = document.querySelectorAll(".card-text");
@@ -23,8 +23,14 @@ fetch(API_HACKING)
   
   firstNewsTitle.innerHTML = firstNews.title;
   firstNewsDesc.innerHTML = firstNews.desc;
+  firstNewsImg.setAttribute("src", firstNews.image);
   firstNewsURL.setAttribute("href", firstNews.link); 
  
+
+  var emptyImg = "https://3c1703fe8d.site.internapcdn.net/newman/gfx/news/hires/2018/whathollywoo.jpg";
+  if(firstNews.image == ""){
+    firstNewsImg.setAttribute("src", emptyImg);
+  }
  
   for(let i = 0; i < containerNewsTitle.length; i++){
     var containerNews = data.articles[i];
