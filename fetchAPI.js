@@ -9,22 +9,21 @@ fetch(API_HACKING)
   var firstNewsTitle = document.querySelector(".font-weight-light");
   var firstNewsDesc = document.querySelector(".firstDesc");
   var firstNewsImg = document.querySelector(".img-fluid rounded mb-4 mb-lg-0");
-  var firstNewsURL = document.querySelector(".btn btn-primary");
+  var firstNewsURL = document.querySelector(".btn-primary");
+  console.log(firstNewsURL);
   
 
   var containerNewsTitle = document.querySelectorAll(".card-text");
   var containerNewsSource = document.querySelectorAll(".card-title");
   var containerNewsDate = document.querySelectorAll("#newsDate");
   var containerNewsURL = document.querySelectorAll(".btn-sm");
-  console.log(containerNewsURL);
   
 
   var firstNews = data.articles[0];
   
   firstNewsTitle.innerHTML = firstNews.title;
   firstNewsDesc.innerHTML = firstNews.desc;
-  //firstNewsImg.innerHTML = array.image;
-  //firstNewsURL.innerHTML = array.link;
+  firstNewsURL.setAttribute("href", firstNews.link); 
  
  
   for(let i = 0; i < containerNewsTitle.length; i++){
@@ -44,10 +43,7 @@ fetch(API_HACKING)
 
   for(let i = 0; i < containerNewsURL.length; i++){
     var containerNews = data.articles[i];
-    var hrefURL = containerNewsURL[i].getAttribute("href");
     containerNewsURL[i].setAttribute("href", containerNews.link)
-    //containerNewsURL[i].innerHTML = containerNews.link;
-    console.log(hrefURL);
   }  
 
 
