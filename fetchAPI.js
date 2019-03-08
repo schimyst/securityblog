@@ -16,7 +16,7 @@ fetch(API_HACKING)
   // Pegando os elementos dos 6 cards
   var containerNewsTitle = document.querySelectorAll(".card-title");
   var containerNewsDesc = document.querySelectorAll(".card-text");
-  //var containerNewsSource = document.querySelectorAll(".card-title");
+  var containerNewsSource = document.querySelectorAll("#newsSource");
   var containerNewsDate = document.querySelectorAll("#newsDate");
   var containerNewsURL = document.querySelectorAll(".btn-sm");
   var containerNewsImg = document.querySelectorAll(".card-image");
@@ -46,10 +46,10 @@ fetch(API_HACKING)
     containerNewsDesc[i].innerHTML = containerNews.desc;
   }
 
-  //for(let i = 0; i < containerNewsSource.length; i++){
-    //var containerNews = data.articles[i];
-    //containerNewsSource[i].innerHTML = containerNews.source;
-  //}
+  for(let i = 0; i < containerNewsSource.length; i++){
+    var containerNews = data.articles[i];
+    containerNewsSource[i].innerHTML = containerNews.source;
+  }
 
   for(let i = 0; i < containerNewsDate.length; i++){
     var containerNews = data.articles[i];
